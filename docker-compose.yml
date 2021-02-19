@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    container_name: clientes-api-spring
+    image: johnnessantos/clientes-api-spring
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresqldb
+  postgresqldb:
+    container_name: postgresqldb
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=luizalabs
+      - POSTGRES_USER=luizalabs
+      - POSTGRES_DB=client
+
+    

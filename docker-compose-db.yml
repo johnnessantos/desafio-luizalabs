@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgresqldb:
+    container_name: postgresqldb
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=luizalabs
+      - POSTGRES_USER=luizalabs
+      - POSTGRES_DB=client
+
+    
